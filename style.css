@@ -1,1 +1,41 @@
-html, body, #map { height: 100%; margin: 0; padding: 0; }
+:root{
+  --bg:#0e0e0f;
+  --panel:#151517;
+  --text:#f2f2f2;
+  --muted:#9aa0a6;
+  --accent:#18a558;
+  --danger:#e74c3c;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:flex;background:#000;color:var(--text);font:14px/1.4 Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial}
+
+.sidebar{
+  width:280px;min-width:260px;background:var(--bg);border-right:1px solid #222;display:flex;flex-direction:column
+}
+.bar-header{padding:12px;border-bottom:1px solid #222}
+.bar-header h1{margin:0 0 10px;font-size:14px;letter-spacing:.08em;color:#cfd3d7}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid #2b2b2e;background:#1d1d20;color:var(--text);
+  padding:8px 10px;border-radius:8px;cursor:pointer}
+.btn:hover{border-color:#3a3a3f}
+.btn-primary{background:var(--accent);border-color:transparent}
+.btn-primary:hover{filter:brightness(1.05)}
+.layers{padding:10px 12px 14px;overflow:auto}
+.layers-title{font-weight:600;color:#cfd3d7;margin:6px 0 10px}
+.layer-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.layer-item{background:var(--panel);border:1px solid #26262a;border-radius:10px;padding:8px 10px;display:flex;align-items:center;gap:8px}
+.layer-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.icon-btn{width:28px;height:28px;border:1px solid #2b2b2e;background:#1c1c1f;border-radius:8px;display:grid;place-items:center;cursor:pointer}
+.icon-btn:hover{border-color:#3f3f45}
+.icon-btn.danger:hover{border-color:var(--danger)}
+.icon{width:16px;height:16px;fill:#cfd3d7}
+.icon-btn .icon.zoom{transform:translateY(-.5px)}
+.color-chip{
+  width:20px;height:20px;border-radius:6px;cursor:pointer;border:2px solid #fff;
+  box-shadow:0 0 0 2px #000; /* hebt sich auf Karte immer ab */
+}
+.color-input{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+
+/* Karte */
+#map{flex:1;height:100%}
+.leaflet-container{background:#c7e1ef}

@@ -1,25 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leaflet – Hamburg + GeoJSON</title>
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""
-  />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WEBKARTE</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-  <div id="map"></div>
+  <aside class="sidebar">
+    <header class="bar-header">
+      <h1>WEBKARTE</h1>
+      <button id="btn-upload" class="btn btn-primary">Daten laden</button>
+      <input id="file-input" type="file" accept=".geojson,.json,.zip" multiple hidden />
+    </header>
 
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""
-  ></script>
+    <section class="layers">
+      <div class="layers-title">LAYER</div>
+      <ul id="layer-list" class="layer-list"></ul>
+    </section>
+  </aside>
+
+  <main id="map"></main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Optional: shpjs für ZIP-Shapefile; wenn du’s nicht brauchst, weglassen -->
+  <!-- <script src="https://unpkg.com/shpjs@latest/dist/shp.min.js"></script> -->
   <script src="app.js"></script>
 </body>
 </html>
